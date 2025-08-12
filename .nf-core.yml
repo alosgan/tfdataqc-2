@@ -1,0 +1,17 @@
+repository_type: pipeline
+
+nf_core_version: 3.3.2
+
+lint: {}
+
+template:
+  org: nf-core
+  name: tfdataqctwo
+  description: Quality control
+  author: Alex Ponomarenko, Matthew Care
+  version: 0.1dev
+  force: true
+  outdir: .
+  skip_features:
+    - gpu
+  is_nfcore: true
