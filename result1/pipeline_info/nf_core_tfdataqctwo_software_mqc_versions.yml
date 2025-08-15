@@ -1,0 +1,5 @@
+FASTQC:
+  fastqc: 0.12.1
+Workflow:
+    nf-core/tfdataqctwo: v0.1dev
+    Nextflow: 24.10.2

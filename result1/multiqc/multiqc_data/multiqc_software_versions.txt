@@ -1,0 +1,3 @@
+Sample	fastqc	nf-core/tfdataqctwo	Nextflow
+FastQC	0.12.1		
+Workflow		v0.1dev	24.10.2
