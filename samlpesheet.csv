@@ -1,0 +1,4 @@
+sample,fastq_1,fastq_2,strandedness
+WT_REP1,/users/pwg519/scratch/fastq_input/SRR6357070_1.fastq.gz,/users/pwg519/scratch/fastq_input/SRR6357070_2.fastq.gz,auto
+WT_REP1,/users/pwg519/scratch/fastq_input/SRR6357071_1.fastq.gz,/users/pwg519/scratch/fastq_input/SRR6357071_2.fastq.gz,auto
+WT_REP2,/users/pwg519/scratch/fastq_input/SRR6357072_1.fastq.gz,/users/pwg519/scratch/fastq_input/SRR6357072_2.fastq.gz,reverse
