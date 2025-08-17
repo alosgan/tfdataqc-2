@@ -5,6 +5,8 @@
 */
 include { FASTQC                 } from '../modules/nf-core/fastqc/main'
 include { MULTIQC                } from '../modules/nf-core/multiqc/main'
+include { FASTQC_FASTP           } from '../subworkflows/local/fastqc_fastp'
+include { SORTMERNA              } from '../modules/nf-core/sortmerna/main'
 include { paramsSummaryMap       } from 'plugin/nf-schema'
 include { paramsSummaryMultiqc   } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
@@ -25,13 +27,28 @@ workflow TFDATAQCTWO {
     ch_versions = Channel.empty()
     ch_multiqc_files = Channel.empty()
     //
-    // MODULE: Run FastQC
+    // SUBWORKFLOW: Run FASTQC_FASTP
     //
-    FASTQC (
-        ch_samplesheet
+    FASTQC_FASTP(
+        ch_samplesheet,
+        params.fastp_save_trimmed_fail,
+        params.fastp_use_fastplong
     )
-    ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.collect{it[1]})
-    ch_versions = ch_versions.mix(FASTQC.out.versions.first())
+
+    FASTQC_FASTP.out.reads.set { ch_debug }
+    ch_debug.view()
+
+
+    ch_multiqc_files = ch_multiqc_files.mix(FASTQC_FASTP.out.multiqc_files)
+    ch_versions = ch_versions.mix(FASTQC_FASTP.out.version)
+
+
+
+
+   
+
+
+
 
     //
     // Collate and save software versions
