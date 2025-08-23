@@ -1,7 +1,0 @@
-Module	Section	Sample Name	Source
-fastp	all_sections	WT_REP1	/mnt/scratch/users/pwg519/tfdataqc-2/work/fa/5d4969288afec85a8b826fca95d295/3/WT_REP1.fastp.json
-fastp	all_sections	WT_REP2	/mnt/scratch/users/pwg519/tfdataqc-2/work/fa/5d4969288afec85a8b826fca95d295/4/WT_REP2.fastp.json
-FastQC	all_sections	WT_REP1_1	/mnt/scratch/users/pwg519/tfdataqc-2/work/fa/5d4969288afec85a8b826fca95d295/12/WT_REP1_1_fastqc.zip
-FastQC	all_sections	WT_REP1_2	/mnt/scratch/users/pwg519/tfdataqc-2/work/fa/5d4969288afec85a8b826fca95d295/13/WT_REP1_2_fastqc.zip
-FastQC	all_sections	WT_REP2_1	/mnt/scratch/users/pwg519/tfdataqc-2/work/fa/5d4969288afec85a8b826fca95d295/5/WT_REP2_1_fastqc.zip
-FastQC	all_sections	WT_REP2_2	/mnt/scratch/users/pwg519/tfdataqc-2/work/fa/5d4969288afec85a8b826fca95d295/6/WT_REP2_2_fastqc.zip

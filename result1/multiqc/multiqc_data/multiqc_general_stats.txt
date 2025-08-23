@@ -1,7 +1,0 @@
-Sample	fastp-pct_duplication	fastp-after_filtering_q30_rate	fastp-after_filtering_q30_bases	fastp-filtering_result_passed_filter_reads	fastp-after_filtering_gc_content	fastp-pct_surviving	fastp-pct_adapter	fastqc-percent_duplicates	fastqc-percent_gc	fastqc-avg_sequence_length	fastqc-median_sequence_length	fastqc-percent_fails	fastqc-total_sequences
-WT_REP1	12.307	93.7618	17.857354	0.190946	40.0924	95.473	9.177						
-WT_REP1_1								76.61328333665016	40.0	99.29033862976968	100	20.0	0.095473
-WT_REP1_2								76.67193866328701	40.0	99.2910089763598	100	20.0	0.095473
-WT_REP2	7.41	94.7262	9.055004	0.095922	40.3832	95.922	9.884						
-WT_REP2_1								67.856	40.0	101.0	101	20.0	0.049999999999999996
-WT_REP2_2								66.176	40.0	101.0	101	20.0	0.049999999999999996

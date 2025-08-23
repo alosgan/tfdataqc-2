@@ -3,14 +3,16 @@
     IMPORT MODULES / SUBWORKFLOWS / FUNCTIONS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-include { FASTQC                 } from '../modules/nf-core/fastqc/main'
-include { MULTIQC                } from '../modules/nf-core/multiqc/main'
-include { FASTQC_FASTP           } from '../subworkflows/local/fastqc_fastp'
-include { SORTMERNA              } from '../modules/nf-core/sortmerna/main'
-include { paramsSummaryMap       } from 'plugin/nf-schema'
-include { paramsSummaryMultiqc   } from '../subworkflows/nf-core/utils_nfcore_pipeline'
-include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
-include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_tfdataqctwo_pipeline'
+include { FASTQC                       } from '../modules/nf-core/fastqc/main'
+include { MULTIQC                      } from '../modules/nf-core/multiqc/main'
+include { FASTQC_FASTP                 } from '../subworkflows/local/fastqc_fastp'
+include { SORTMERNA                    } from '../modules/nf-core/sortmerna/main'
+include { SORTMERNA as SORTMERNA_INDEX } from '../modules/nf-core/sortmerna/main'
+include { KRAKEN2_WF                   } from '../subworkflows/kraken2_wf/main.nf'
+include { paramsSummaryMap             } from 'plugin/nf-schema'
+include { paramsSummaryMultiqc         } from '../subworkflows/nf-core/utils_nfcore_pipeline'
+include { softwareVersionsToYAML       } from '../subworkflows/nf-core/utils_nfcore_pipeline'
+include { methodsDescriptionText       } from '../subworkflows/local/utils_nfcore_tfdataqctwo_pipeline'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,8 +37,7 @@ workflow TFDATAQCTWO {
         params.fastp_use_fastplong
     )
 
-    FASTQC_FASTP.out.reads.set { ch_debug }
-    ch_debug.view()
+    FASTQC_FASTP.out.reads.set { ch_filtered_reads }
 
 
     ch_multiqc_files = ch_multiqc_files.mix(FASTQC_FASTP.out.multiqc_files)
@@ -44,7 +45,42 @@ workflow TFDATAQCTWO {
 
 
 
+     Channel
+        .fromPath("${params.rrna_fastas}/*.{fa,fna,fasta,fa.gz,fasta.gz}", checkIfExists: true)
+        .collect()
+        .map { ['rrna_refs', it] }
+        .set { ch_sortmerna_fastas }
 
+    SORTMERNA_INDEX(
+            [[], []],
+            ch_sortmerna_fastas,
+            [[], []],
+    )
+
+
+    ch_sortmerna_index = SORTMERNA_INDEX.out.index
+   
+ 
+    SORTMERNA( 
+        ch_filtered_reads, 
+        ch_sortmerna_fastas, 
+        ch_sortmerna_index
+    )
+
+   
+
+
+    
+    ch_multiqc_files = ch_multiqc_files.mix(SORTMERNA.out.log.collect{it[1]}.ifEmpty([]))
+    ch_versions = ch_versions.mix(SORTMERNA.out.versions.first())
+
+
+    KRAKEN2_WF(
+        params.kraken2_db,
+        SORTMERNA.out.reads,
+    )
+    ch_multiqc_files = ch_multiqc_files.mix(KRAKEN2_WF.out.multiqc_files)
+    ch_versions = ch_versions.mix(KRAKEN2_WF.out.version)
    
 
 

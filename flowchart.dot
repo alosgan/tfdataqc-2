@@ -1,0 +1,574 @@
+digraph "flowchart" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v6 -> v11 [label="ch_reads"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v42 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v41 [label="ch_multiqc_files"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v15 [label="ch_versions"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v19 [label="ch_multiqc_files"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v13;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v12 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:CAT_FASTQ"];
+v11 -> v12;
+
+v12 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:CAT_FASTQ"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v12 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:CAT_FASTQ"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v12 -> v14;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTQC_RAW"];
+v13 -> v16 [label="ch_filtered_reads"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v21 [label="ch_versions"];
+
+v16 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTQC_RAW"];
+v17 [shape=point];
+v16 -> v17;
+
+v16 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTQC_RAW"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v18;
+
+v16 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTQC_RAW"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v16 -> v20;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v32 [label="ch_multiqc_files"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v34 [label="ch_versions"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v13 -> v26 [label="ch_filtered_reads"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v22 -> v26 [label="adapter_fasta"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v23 -> v26 [label="discard_trimmed_pass"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v24 -> v26 [label="save_trimmed_fail"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v25 -> v26 [label="save_merged"];
+
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v35 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTQC_TRIMMED"];
+v26 -> v35 [label="ch_filtered_reads"];
+
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 -> v31;
+
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v30 [shape=point];
+v26 -> v30;
+
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v29 [shape=point];
+v26 -> v29;
+
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v28 [shape=point];
+v26 -> v28;
+
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v27 [shape=point];
+v26 -> v27;
+
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v26 -> v33;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v38 [label="ch_multiqc_files"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v40 [label="ch_versions"];
+
+v35 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTQC_TRIMMED"];
+v36 [shape=point];
+v35 -> v36;
+
+v35 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTQC_TRIMMED"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 -> v37;
+
+v35 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTQC_TRIMMED"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v35 -> v39;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v41 [label="multiqc_files"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v42 [label="version"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v56 [label="ch_multiqc_files"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v58 [label="ch_versions"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA_INDEX"];
+v45 -> v48 [label="ch_sortmerna_fastas"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA_INDEX"];
+v46 -> v48;
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA_INDEX"];
+v47 -> v48;
+
+v48 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA_INDEX"];
+v51 [shape=point];
+v48 -> v51;
+
+v48 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA_INDEX"];
+v50 [shape=point];
+v48 -> v50;
+
+v48 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA_INDEX"];
+v52 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA"];
+v48 -> v52 [label="ch_sortmerna_index"];
+
+v48 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA_INDEX"];
+v49 [shape=point];
+v48 -> v49;
+
+v26 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:FASTQC_FASTP:FASTP"];
+v52 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA"];
+v26 -> v52 [label="ch_filtered_reads"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA"];
+v45 -> v52 [label="ch_sortmerna_fastas"];
+
+v52 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v52 -> v70 [label="ch_trimmed_reads"];
+
+v52 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 -> v54;
+
+v52 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA"];
+v53 [shape=point];
+v52 -> v53;
+
+v52 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:SORTMERNA"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v52 -> v57;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v96 [label="ch_multiqc_files"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v97 [label="ch_versions"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v67 [label="ch_versions"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v79 [label="ch_multiqc_files"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v83 [label="ch_krona_text"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 -> v63 [label="ch_kraken_db"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v68;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v65 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:UNTAR"];
+v64 -> v65;
+
+v65 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:UNTAR"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v68;
+
+v65 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:UNTAR"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v81 [label="ch_versions"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v69 -> v70 [label="ch_final_dbs"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v74 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKEN2_KRAKEN2"];
+v71 -> v74;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v74 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKEN2_KRAKEN2"];
+v71 -> v74;
+
+v72 [shape=point,label="",fixedsize=true,width=0.1];
+v74 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKEN2_KRAKEN2"];
+v72 -> v74 [label="save_output_fastqs"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1];
+v74 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKEN2_KRAKEN2"];
+v73 -> v74 [label="save_reads_assignment"];
+
+v74 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKEN2_KRAKEN2"];
+v77 [shape=point];
+v74 -> v77;
+
+v74 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKEN2_KRAKEN2"];
+v76 [shape=point];
+v74 -> v76;
+
+v74 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKEN2_KRAKEN2"];
+v75 [shape=point];
+v74 -> v75 [label="kraken_classified_reads_assignment"];
+
+v74 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKEN2_KRAKEN2"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v74 -> v78 [label="kraken_report"];
+
+v74 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKEN2_KRAKEN2"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v74 -> v80;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v96 [label="multiqc_files"];
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v85 [label="ch_versions"];
+
+v74 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKEN2_KRAKEN2"];
+v82 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKENTOOLS_KREPORT2KRONA"];
+v74 -> v82 [label="kraken_report"];
+
+v82 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKENTOOLS_KREPORT2KRONA"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v83;
+
+v82 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRAKENTOOLS_KREPORT2KRONA"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v82 -> v84;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRONA_CLEANUP"];
+v83 -> v86 [label="ch_krona_text"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v88 [label="ch_versions"];
+
+v86 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRONA_CLEANUP"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v86 -> v89 [label="ch_cleaned_krona_text"];
+
+v86 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRONA_CLEANUP"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v95 [label="ch_versions"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRONA_KTIMPORTTEXT"];
+v91 -> v92 [label="ch_krona_text_for_import"];
+
+v92 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRONA_KTIMPORTTEXT"];
+v93 [shape=point];
+v92 -> v93 [label="ch_krona_html"];
+
+v92 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:KRAKEN2_WF:KRONA_KTIMPORTTEXT"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v92 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v97 [label="version"];
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v109 [label="ch_multiqc_files"];
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v97 -> v98 [label="versions"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v102;
+
+v101 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v110 [label="ch_collated_versions"];
+
+v104 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v104 -> v115 [label="ch_multiqc_config"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v105 -> v116 [label="ch_multiqc_custom_config"];
+
+v106 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 -> v117 [label="ch_multiqc_logo"];
+
+v107 [shape=point,label="",fixedsize=true,width=0.1];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v107 -> v108 [label="ch_workflow_summary"];
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v110 [label="ch_multiqc_files"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v113 [label="ch_multiqc_files"];
+
+v111 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v111 -> v112 [label="ch_methods_description"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v113 -> v114 [label="ch_multiqc_files"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v120 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:MULTIQC"];
+v114 -> v120;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v120 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:MULTIQC"];
+v115 -> v120;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v120 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:MULTIQC"];
+v116 -> v120;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v120 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:MULTIQC"];
+v117 -> v120;
+
+v118 [shape=point,label="",fixedsize=true,width=0.1];
+v120 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:MULTIQC"];
+v118 -> v120 [label="replace_names"];
+
+v119 [shape=point,label="",fixedsize=true,width=0.1];
+v120 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:MULTIQC"];
+v119 -> v120 [label="sample_names"];
+
+v120 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:MULTIQC"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v120 -> v124;
+
+v120 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:MULTIQC"];
+v123 [shape=point];
+v120 -> v123;
+
+v120 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:MULTIQC"];
+v122 [shape=point];
+v120 -> v122;
+
+v120 [label="NFCORE_TFDATAQCTWO:TFDATAQCTWO:MULTIQC"];
+v121 [shape=point];
+v120 -> v121;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v124 -> v125 [label="multiqc_report"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v126 [shape=point];
+v125 -> v126;
+
+}

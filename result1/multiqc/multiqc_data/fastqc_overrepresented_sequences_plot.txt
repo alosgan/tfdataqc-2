@@ -1,5 +1,0 @@
-Sample	Top overrepresented sequence	Sum of remaining overrepresented sequences
-WT_REP1_1	0.4283933677584239	8.126904988845013
-WT_REP1_2	0.3760225404040933	6.044640893236831
-WT_REP2_1	0.374	6.694
-WT_REP2_2	0.322	5.21

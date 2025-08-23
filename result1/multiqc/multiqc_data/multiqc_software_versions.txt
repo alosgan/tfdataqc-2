@@ -1,6 +1,0 @@
-Sample	cat	fastp	fastqc	nf-core/tfdataqctwo	Nextflow
-CAT_FASTQ	9.5				
-FASTQC_RAW			0.12.1		
-FASTQC_TRIMMED			0.12.1		
-Workflow				v0.1dev	24.10.2
-fastp		0.24.0			
